@@ -1,0 +1,19 @@
+{
+ "country": "SD",
+ "acts": [
+  {
+   "slug": "criminal-act-1991",
+   "short": "CA 1991",
+   "title": "القانون الجنائي لسنة 1991",
+   "url": "https://www.moj.gov.sd/sudanlaws/epub/EPUB/xhtml/s53c19.html",
+   "versions": [
+    {
+     "from": "2015-03-30",
+     "units": 218,
+     "source_url": "https://www.moj.gov.sd/sudanlaws/epub/EPUB/xhtml/s53c19.html",
+     "sha256": "ae0541b579d8322aec3db2a66e307f1d22d2d91f7539b4afd149db2e13ad53ba"
+    }
+   ]
+  }
+ ]
+}
