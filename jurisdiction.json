@@ -1,0 +1,9 @@
+{
+  "path": "sd",
+  "code": "SD",
+  "name": "Sudan",
+  "level": "country",
+  "repo": "https://github.com/lexifina/sudan-law",
+  "build": "built: Criminal Act 1991 (1 version, 9th Revised Edition, to 30 March 2015)",
+  "register_date": "2026-10-30"
+}
