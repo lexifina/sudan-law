@@ -34,10 +34,10 @@ def cached(url: str) -> bytes:
 
 
 def norm(s: str) -> str:
-    s = s.replace(' ', ' ').replace('‏', '').replace('‎', '').replace('​', '')
+    s = s.replace('\u00a0', ' ').replace('\u200f', '').replace('\u200e', '').replace('\u200b', '')
     s = s.translate(AR_DIGITS)
     s = s.replace('“', '"').replace('”', '"').replace('„', '"')
-    s = re.sub(r'[ \t]+', ' ', s)
+    s = re.sub(r'\s+', ' ', s)
     return s.strip()
 
 
@@ -57,13 +57,13 @@ def blocks(src: str):
         inner = re.sub(r'(?s)<sub>\s*<u>\s*(\d+)\s*</u>\s*</sub>', r'\1/⟨d⟩', inner)
         if tag == 'tr':
             cells = [re.sub(r'<[^>]+>', ' ', c) for c in re.findall(r'(?s)<td[^>]*>(.*?)</td>', inner)]
-            text = ' | '.join(html.unescape(c).replace(' ', ' ').strip() for c in cells)
+            text = ' | '.join(html.unescape(c).replace('\u00a0', ' ').strip() for c in cells)
         else:
             if '<tr' in inner or '<td' in inner:
                 continue
             text = html.unescape(re.sub(r'<br\s*/?>', ' ', inner))
             text = re.sub(r'<[^>]+>', '', text)
-        text = text.replace(' ', ' ').translate(AR_DIGITS)
+        text = text.replace('\u00a0', ' ').translate(AR_DIGITS)
         yield tag, style.group(1) if style else '', text, fns
 
 
