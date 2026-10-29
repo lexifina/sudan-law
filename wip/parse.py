@@ -182,7 +182,7 @@ def parse_act(url: str, body_marker: str, expect_last: int):
             cur['label'] = cur['label'] + ': ' + t if ':' not in cur['label'] else cur['label']
             continue
         if cur['kind'] == 'art' and head_open and not style:
-            raw_t = text.replace(' ', ' ').strip()
+            raw_t = re.sub(r'\s', ' ', text).strip()
             mm = re.match(r'^(\S(?:.*?\S)?)\s{3,}(.+)$', raw_t)
             if mm and len(norm(mm.group(1))) <= 45:
                 cur['head'] = (cur['head'] + ' ' + norm(mm.group(1))).strip()
