@@ -23,7 +23,8 @@ The text is in Arabic, as the Ministry of Justice's edition prints it, with each
 
 - **[Ask Claude about Sudanese law](https://global-law.lexifina.com/v1/try_claude?country=sudan)**: opens Claude with a first question ready.
 - **[Ask ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=sudan)**: the same question in ChatGPT.
-- **[Call the API in your browser](https://global-law.lexifina.com/v1/search_law?query=%D8%A7%D9%84%D8%B3%D8%B1%D9%82%D8%A9&jurisdictions=sudan)**: a search of Sudanese law for "السرقة" (theft), returned as JSON. See the [documentation here](https://lexifina.com/api/global-law).
+- **[Search Sudanese law on our site](https://lexifina.com/law?country=sudan&q=%D8%A7%D9%84%D8%B3%D8%B1%D9%82%D8%A9)**: a search for "السرقة" (theft), with each provision's text and its versions, no account needed.
+- **[Developer REST API](https://global-law.lexifina.com/v1/search_law?query=%D8%A7%D9%84%D8%B3%D8%B1%D9%82%D8%A9&jurisdiction=sudan)**: the same search as JSON, with no key. See the [documentation here](https://lexifina.com/api/global-law).
 
 Both assistants read the record through the free Global law connector (MCP, `https://global-law.lexifina.com/mcp`); the first time, the chat gives you the link that adds it. Ask in Arabic or in English.
 
