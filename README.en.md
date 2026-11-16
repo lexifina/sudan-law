@@ -60,6 +60,7 @@ The version is labelled "oldest version available" and credited to the publisher
 - The Criminal Act was read again from the Ministry's live edition on 30 October 2026: every file matched.
 - The wording is as printed: footnote markers are dropped, spacing is normalised and marginal notes become headings; nothing else is changed (see `LICENSE`).
 - The same corpus always gives the same commit hashes (`tools/build.py`); `main` has no merge commits and no commit dated in the future.
+- [vulnerabilities/](vulnerabilities/README.en.md): possible drafting mistakes in this law, found by global-law's detectors and checked by hand. Not run yet.
 
 ## What it does not show
 
@@ -79,6 +80,10 @@ The version is labelled "oldest version available" and credited to the publisher
 See [`LICENSE`](LICENSE). Laws are not protected by copyright in Sudan: the Copyright and Neighbouring Rights Protection and Literal and Artistic Works Act, 2013, section 6(b), excludes official documents, which section 2 defines to include laws. Lexifina's own contributions (the arrangement of the history, the commit messages and the tools) are CC0 1.0.
 
 No AI model wrote, translated or corrected legal text, and none runs when the history is built; the scripts were written by an AI model (see [`REPRODUCE.md`](REPRODUCE.md)).
+
+## Visualisations
+
+- [visualisations/](visualisations/README.en.md): charts drawn from this repository. Not drawn yet.
 
 ## More
 
