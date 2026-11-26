@@ -65,4 +65,5 @@ duplicate or out-of-order sections, or the chapter has no usable date line under
 
 - Acts made after 30 March 2015 and later amendments (e.g. the Criminal Act amendments of 2020): no official text-layer source found yet.
 - The 2019 Constitutional Charter and its 2020/2025 amendments, the 1998 Constitution, the 2015 amendments of the 2005 Constitution: Gazette scans only (no OCR).
+- Secondary copies checked on 2026-11-26 and not usable: FAOLEX (all post-2015 Sudanese laws are scans; the 2025 genetic-resources regulations have a scrambled text layer), WIPO Lex (the 2019 Charter in English translation only), the Constitute Project (2019 Charter in English translation only), a 3-page partial Arabic Charter PDF from an NGO.
 - Regulations, case law.
