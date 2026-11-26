@@ -6,7 +6,10 @@ This file is written by the build on 2026-10-28, the day the source data was ret
 
 | Source | Address | Retrieved | Licence |
 | --- | --- | --- | --- |
-| Ministry of Justice, Laws of Sudan ebook (9th Revised Edition) | <https://www.moj.gov.sd/sudanlaws/> | 2026-10-28 | Rights: وزارة العدل - جمهورية السودان (no open licence stated) |
+| Ministry of Justice, Laws of Sudan ebook (9th Revised Edition) | <https://www.moj.gov.sd/sudanlaws/> | 2026-10-28, 2026-11-26 | Rights: وزارة العدل - جمهورية السودان (no open licence stated) |
+| Constitute Project, Sudan 2005 (Arabic) | <https://www.constituteproject.org/constitution/Sudan_2005?lang=ar> | 2026-11-26 | CC BY-NC 3.0 Unported (site content); secondary copy |
+
+Since 2026-11-26 the acts after the Criminal Act are appended by the runner in Lexifina's `scripts/sudan-law/runner/`: `run.py` fetches the ebook (package.opf, contents.html and the 364 chapters, one request a second), `acts.py` and `parse_moj.py` split each chapter into sections and check the parse against the chapter's own table of sections, `build.py` appends one commit per act with `git fast-import`, `correct.py` appends `Kind: correction` commits, `constitution.py` adds the 2005 constitution, and `push.py` fast-forwards GitHub. The tables below describe the October build only.
 
 Every word of law in this repository comes from these sources. Lexifina reads them and records each act's dated versions, and the laws that made each change, in one corpus file. This repository is built from that file.
 
