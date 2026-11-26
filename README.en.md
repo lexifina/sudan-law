@@ -24,7 +24,7 @@ The text is in Arabic, as the Ministry of Justice's edition prints it, with each
 | Every change to section 174 of the Criminal Act | `git log -p --word-diff -- قوانين/1991/القانون-الجنائي/مادة-174.md` |
 | Which law wrote each line of section 174? | `git blame قوانين/1991/القانون-الجنائي/مادة-174.md` |
 | Every version of the Criminal Act, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- قوانين/1991/القانون-الجنائي ':!*/README.md'` |
-| Section 174 as in force on 30 March 2015 | `python tools/on.py 2015-03-30 قوانين/1991/القانون-الجنائي مادة-174` |
+| Section 174 as last recorded (30 March 2015) | `git show main:قوانين/1991/القانون-الجنائي/مادة-174.md` |
 
 **Outside git**, we also host this record publicly, for free:
 
