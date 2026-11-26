@@ -11,9 +11,9 @@ The law of Sudan as a git history: one file per section, one commit per version 
 
 Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Sudan's national law, which global-law reads at `sudan/national/acts/`.
 
-**What is in it now:** one act, the Criminal Act 1991 (القانون الجنائي لسنة 1991), in one version: the text in the Ministry of Justice's 9th Revised Edition of the Laws of Sudan, which holds the laws in force on 30 March 2015 (sections 1 to 185 with 88A and 88B, 29 part and chapter headings and 2 schedules). [`data/versions.json`](data/versions.json) lists the act with its version and source, and [`criminal-act-1991/README.md`](criminal-act-1991/README.md) lists its files.
+**What is in it now:** the Interim National Constitution 2005 and 300 acts of the Ministry of Justice's 9th Revised Edition of the Laws of Sudan (laws in force on 30 March 2015), from the Bills of Exchange Act 1917 to acts of 2015: among them the Criminal Act 1991, the Criminal Procedure Act 1991, the Personal Status Act for Muslims 1991, the Civil Procedure Act 1983, the Evidence Act 1994 and the Labour Act 1997. See [STRUCTURE.md](STRUCTURE.md) for the layout and what is held back.
 
-The act is in `criminal-act-1991/`, one file per section: `criminal-act-1991/art-174.md` is section 174, theft (السرقة); part and chapter headings are in the `part-*.md` files, the schedules in `schedule-01.md` and `schedule-02.md`.
+Acts are in `قوانين/<year>/<title>/`, one file per section: `قوانين/1991/القانون-الجنائي/مادة-174.md` is section 174 of the Criminal Act, theft (السرقة); part and chapter headings are in `باب-*.md`, schedules in `جدول-*.md`, and each act's title, dates and source in `ديباجة.md`. The constitution is in `دساتير/`.
 
 The text is in Arabic, as the Ministry of Justice's edition prints it, with each section's marginal note as its heading. An English translation is not part of this record.
 
@@ -21,10 +21,10 @@ The text is in Arabic, as the Ministry of Justice's edition prints it, with each
 
 | Question | Command |
 | --- | --- |
-| Every change to section 174 of the Criminal Act | `git log -p --word-diff -- criminal-act-1991/art-174.md` |
-| Which law wrote each line of section 174? | `git blame criminal-act-1991/art-174.md` |
-| Every version of the Criminal Act, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- criminal-act-1991 ':!*/README.md'` |
-| Section 174 as in force on 30 March 2015 | `python tools/on.py 2015-03-30 criminal-act-1991 174` |
+| Every change to section 174 of the Criminal Act | `git log -p --word-diff -- قوانين/1991/القانون-الجنائي/مادة-174.md` |
+| Which law wrote each line of section 174? | `git blame قوانين/1991/القانون-الجنائي/مادة-174.md` |
+| Every version of the Criminal Act, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- قوانين/1991/القانون-الجنائي ':!*/README.md'` |
+| Section 174 as in force on 30 March 2015 | `python tools/on.py 2015-03-30 قوانين/1991/القانون-الجنائي مادة-174` |
 
 **Outside git**, we also host this record publicly, for free:
 
@@ -40,7 +40,7 @@ Both assistants read the record through the free Global law connector (MCP, `htt
 ```sh
 git clone --depth 1 https://github.com/lexifina/global-law && cd global-law
 python3 tools/countries.py add sudan/national/acts
-python3 tools/law.py show 2026-01-01 sudan/national/acts/criminal-act-1991/art-174.md
+python3 tools/law.py show 2026-01-01 sudan/national/acts/قوانين/1991/القانون-الجنائي/مادة-174.md
 ```
 
 Opened in Claude Code, Cursor, VS Code or Codex, the clone also starts a local MCP server with the same tools ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
@@ -49,10 +49,12 @@ Opened in Claude Code, Cursor, VS Code or Codex, the clone also starts a local M
 
 Each commit is dated at noon, Africa/Khartoum, on the day the version took effect, and carries it in its `In-force:` trailer:
 
-- the Criminal Act's one version is dated 30 March 2015, the day to which the 9th Revised Edition says it holds the laws in force; it is not the act as enacted (published in the Gazette on 20 February 1991, as the edition's first footnote says);
-- the edition's footnotes name the laws behind some sections (among them Acts No. 15 of 2009, 20 of 2012 and 21 of 2015) but give no day for each change, so they are listed in the commit message, not committed as versions.
+- an act whose footnotes in the edition name no amending law is the text as enacted, dated by the commencement date printed under its title (the edition's "تاريخ السريان"): 108 acts;
+- an act whose footnotes name later amending laws is the text as in force on 30 March 2015, the edition's cut-off, and is dated that day (191 acts, the Criminal Act among them); the amending laws are listed in the commit's `Amended-by:` trailer, as the edition gives no day for each change;
+- versions before 1970 are stamped 1 January 1970, with the real day first in the subject and in `In-force:`;
+- the Interim National Constitution is dated 9 July 2005, the day it was signed (Art. 223(2), 226(4)).
 
-The version is labelled "oldest version available" and credited to the publisher, `Ministry of Justice of Sudan (وزارة العدل)`, not to a law. The committer is Lexifina.
+Versions are credited to the publisher, `Ministry of Justice of Sudan (وزارة العدل)`, not to a law; the constitution to the Constitute Project. Parse corrections are separate `Kind: correction` commits, dated like the version they correct. The committer is Lexifina.
 
 ## How it is checked
 
@@ -64,16 +66,17 @@ The version is labelled "oldest version available" and credited to the publisher
 
 ## What it does not show
 
-- **Changes after 30 March 2015.** The Criminal Act has been amended since (in 2020, among other years); no later change is applied, so a section may differ from the text in force today.
-- **The act as enacted in 1991**, or any version before the edition's.
-- **Most of Sudan's law.** The 9th Revised Edition holds 332 acts in 14 volumes; one is here. The Civil Transactions Act 1984 was left out because its parse was not complete. Regulations, case law and bills are not here.
-- **The Constitution.** The 2019 Constitutional Charter and its 2020 and 2025 amendments are Gazette scans with no text layer, and no text is read by OCR.
+- **Changes after 30 March 2015.** Many acts have been amended since (the Criminal Act in 2020, among others); no later change is applied, so a section may differ from the text in force today. Acts made after the edition are not here yet.
+- **Amended acts as enacted**: for an amended act only the edition's 2015 text is here.
+- **32 acts of the edition**, held because their parse did not check out against the act's own table of sections or had no usable date line, among them the Civil Transactions Act 1984, the Companies Act 1925 and the Land Settlement and Registration Act 1925 (list in STRUCTURE.md). Regulations, case law and bills are not here.
+- **The 2019 Constitutional Charter**, its 2020 and 2025 amendments, the 1998 Constitution and the 2015 amendments of the 2005 Constitution: the official copies are Gazette scans with no text layer, and no text is read by OCR.
 
 ## Sources
 
 | Source | Kind | Past versions | Notes |
 | --- | --- | --- | --- |
-| [Ministry of Justice of Sudan, قوانين السودان](https://www.moj.gov.sd/sudanlaws/) | Official 9th Revised Edition of the Laws of Sudan | no, each act as in force on 30 March 2015 | Retrieved 28 October 2026; footnotes name amending laws without dates |
+| [Ministry of Justice of Sudan, قوانين السودان](https://www.moj.gov.sd/sudanlaws/) | Official 9th Revised Edition of the Laws of Sudan | no: unamended acts as enacted, amended acts as in force on 30 March 2015 | Retrieved 26 November 2026; footnotes name amending laws without dates |
+| [Constitute Project](https://www.constituteproject.org/constitution/Sudan_2005?lang=ar) | Secondary copy: Interim National Constitution 2005, Arabic | no | Retrieved 26 November 2026 |
 
 ## Licence
 
