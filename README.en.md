@@ -11,7 +11,7 @@ The law of Sudan as a git history: one file per section, one commit per version 
 
 Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Sudan's national law, which global-law reads at `sudan/national/acts/`.
 
-**What is in it now:** the Interim National Constitution 2005 and 300 acts of the Ministry of Justice's 9th Revised Edition of the Laws of Sudan (laws in force on 30 March 2015), from the Bills of Exchange Act 1917 to acts of 2015: among them the Criminal Act 1991, the Criminal Procedure Act 1991, the Personal Status Act for Muslims 1991, the Civil Procedure Act 1983, the Evidence Act 1994 and the Labour Act 1997. See [STRUCTURE.md](STRUCTURE.md) for the layout and what is held back.
+**What is in it now:** the Interim National Constitution 2005, the 2019 Transitional Constitutional Charter (English translation, as signed and as amended in 2020) and 314 acts of the Ministry of Justice's 9th Revised Edition of the Laws of Sudan (laws in force on 30 March 2015), from the Bills of Exchange Act 1917 to acts of 2015: among them the Civil Transactions Act 1984, the Criminal Act 1991, the Criminal Procedure Act 1991, the Personal Status Act for Muslims 1991, the Civil Procedure Act 1983, the Evidence Act 1994 and the Labour Act 1997. See [STRUCTURE.md](STRUCTURE.md) for the layout and what is held back.
 
 Acts are in `قوانين/<year>/<title>/`, one file per section: `قوانين/1991/القانون-الجنائي/مادة-174.md` is section 174 of the Criminal Act, theft (السرقة); part and chapter headings are in `باب-*.md`, schedules in `جدول-*.md`, and each act's title, dates and source in `ديباجة.md`. The constitution is in `دساتير/`.
 
@@ -54,7 +54,7 @@ Each commit is dated at noon, Africa/Khartoum, on the day the version took effec
 - versions before 1970 are stamped 1 January 1970, with the real day first in the subject and in `In-force:`;
 - the Interim National Constitution is dated 9 July 2005, the day it was signed (Art. 223(2), 226(4)).
 
-Versions are credited to the publisher, `Ministry of Justice of Sudan (وزارة العدل)`, not to a law; the constitution to the Constitute Project. Parse corrections are separate `Kind: correction` commits, dated like the version they correct. The committer is Lexifina.
+Versions are credited to the publisher, `Ministry of Justice of Sudan (وزارة العدل)`, not to a law; the constitutions to the Constitute Project. Parse corrections are separate `Kind: correction` commits, dated like the version they correct. The committer is Lexifina.
 
 ## How it is checked
 
@@ -68,8 +68,8 @@ Versions are credited to the publisher, `Ministry of Justice of Sudan (وزار�
 
 - **Changes after 30 March 2015.** Many acts have been amended since (the Criminal Act in 2020, among others); no later change is applied, so a section may differ from the text in force today. Acts made after the edition are not here yet.
 - **Amended acts as enacted**: for an amended act only the edition's 2015 text is here.
-- **32 acts of the edition**, held because their parse did not check out against the act's own table of sections or had no usable date line, among them the Civil Transactions Act 1984, the Companies Act 1925 and the Land Settlement and Registration Act 1925 (list in STRUCTURE.md). Regulations, case law and bills are not here.
-- **The 2019 Constitutional Charter**, its 2020 and 2025 amendments, the 1998 Constitution and the 2015 amendments of the 2005 Constitution: the official copies are Gazette scans with no text layer, and no text is read by OCR.
+- **18 acts of the edition**, held because their parse did not check out against the act's own table of sections or had no usable date line, among them the Companies Act 1925 and the Land Settlement and Registration Act 1925 (list in STRUCTURE.md). Regulations, case law and bills are not here.
+- **The Arabic text of the 2019 Constitutional Charter** (here in English translation only), its 2025 amendment, the 1998 Constitution and the 2015 amendments of the 2005 Constitution: the official copies are Gazette scans with no text layer, and no text is read by OCR. The 2020 amendments of the Criminal Act and of other acts are not here: no copy with a text layer was found.
 
 ## Sources
 
@@ -77,6 +77,7 @@ Versions are credited to the publisher, `Ministry of Justice of Sudan (وزار�
 | --- | --- | --- | --- |
 | [Ministry of Justice of Sudan, قوانين السودان](https://www.moj.gov.sd/sudanlaws/) | Official 9th Revised Edition of the Laws of Sudan | no: unamended acts as enacted, amended acts as in force on 30 March 2015 | Retrieved 26 November 2026; footnotes name amending laws without dates |
 | [Constitute Project](https://www.constituteproject.org/constitution/Sudan_2005?lang=ar) | Secondary copy: Interim National Constitution 2005, Arabic | no | Retrieved 26 November 2026 |
+| [Constitute Project](https://www.constituteproject.org/constitution/Sudan_2020?lang=en) | Secondary copy: Constitutional Charter for the Transitional Period 2019, English translation by International IDEA, as signed (2019) and as amended in 2020 | yes: 17 August 2019, 2 November 2020 | Retrieved 27 November 2026; not an official text |
 
 ## Licence
 
