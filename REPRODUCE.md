@@ -8,8 +8,9 @@ This file is written by the build on 2026-10-28, the day the source data was ret
 | --- | --- | --- | --- |
 | Ministry of Justice, Laws of Sudan ebook (9th Revised Edition) | <https://www.moj.gov.sd/sudanlaws/> | 2026-10-28, 2026-11-26 | Rights: وزارة العدل - جمهورية السودان (no open licence stated) |
 | Constitute Project, Sudan 2005 (Arabic) | <https://www.constituteproject.org/constitution/Sudan_2005?lang=ar> | 2026-11-26 | CC BY-NC 3.0 Unported (site content); secondary copy |
+| Constitute Project, Sudan 2019 and Sudan 2019 (rev. 2020) (English, International IDEA translation) | <https://www.constituteproject.org/constitution/Sudan_2019?lang=en>, <https://www.constituteproject.org/service/html?cons_id=Sudan_2020&lang=en> | 2026-11-27 | CC BY-NC 3.0 Unported (site content); secondary copy, translation |
 
-Since 2026-11-26 the acts after the Criminal Act are appended by the runner in Lexifina's `scripts/sudan-law/runner/`: `run.py` fetches the ebook (package.opf, contents.html and the 364 chapters, one request a second), `acts.py` and `parse_moj.py` split each chapter into sections and check the parse against the chapter's own table of sections, `build.py` appends one commit per act with `git fast-import`, `correct.py` appends `Kind: correction` commits, `constitution.py` adds the 2005 constitution, and `push.py` fast-forwards GitHub. The tables below describe the October build only.
+Since 2026-11-26 the acts after the Criminal Act are appended by the runner in Lexifina's `scripts/sudan-law/runner/`: `run.py` fetches the ebook (package.opf, contents.html and the 364 chapters, one request a second), `acts.py` and `parse_moj.py` split each chapter into sections and check the parse against the chapter's own table of sections, `build.py` appends one commit per act with `git fast-import`, `correct.py` appends `Kind: correction` commits, `constitution.py` adds the 2005 constitution, `charter.py` the 2019 Constitutional Charter (2019 and 2020 versions), `release_held.py` re-tries held acts with the relaxed parse, `cta.py` the Civil Transactions Act 1984 (three mechanical repairs to its chapter, listed in its commit), and `push.py` fast-forwards GitHub. The tables below describe the October build only.
 
 Every word of law in this repository comes from these sources. Lexifina reads them and records each act's dated versions, and the laws that made each change, in one corpus file. This repository is built from that file.
 
@@ -58,7 +59,7 @@ No second build of this corpus has been compared yet.
 - One version per act, from the 9th Revised Edition, dated 2015-03-30 (the edition's own stated cut-off), credited to the publisher as oldest version available.
 - Each source paragraph is one line; the marginal note (section heading) is taken out of the run-in text and put in the heading line.
 - Footnote markers are dropped from the text; the amending laws they name are listed in the version note, not credited, because the edition gives no dates per change.
-- The 2019 Constitutional Charter and its 2020 and 2025 amendments are left out: the official gazette PDFs (moj.gov.sd files 144, 226, 425) are scans with no usable text layer, and OCR is not used. The WIPO Lex English text is an International IDEA translation, not official.
+- The 2019 Constitutional Charter is in English translation only (International IDEA, via the Constitute Project; tagged `Text-language` and `Source-status: secondary copy`): the official Arabic gazette PDFs (moj.gov.sd files 144, 226, 425) are scans with no usable text layer, and OCR is not used. The 2019 version is dated 17 August 2019 (signature, Art. 1); the 2020 version 2 November 2020, the date of the Gazette issue carrying the amendment (file 226). The 2025 amendment is not here.
 
 ## What AI did and did not do
 
