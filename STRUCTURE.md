@@ -55,3 +55,9 @@ note and the section number) and the Civil Transactions Act 1984 by `cta.py` (it
 - The Arabic text of the 2019 Constitutional Charter and its 2020/2025 amendments, the 1998 Constitution, the 2015 amendments of the 2005 Constitution: Gazette scans only (no OCR). The Charter is here in English translation (2019 and 2020 versions).
 - Secondary copies checked on 2026-11-26 and not usable: FAOLEX (all post-2015 Sudanese laws are scans; the 2025 genetic-resources regulations have a scrambled text layer), WIPO Lex (the 2019 Charter in English translation only), the Constitute Project (2019 Charter in English translation only; used since 2026-11-27 for the Charter), a 3-page partial Arabic Charter PDF from an NGO.
 - Regulations (the Ministry of Justice download centre has about 20 regulations with a text layer, but the layer is scrambled by the PDFs' font encoding), case law.
+
+## Arabic OCR records added 2026-11-28
+
+- `دساتير/2019-الوثيقة-الدستورية-للفترة-الانتقالية-النص-الرسمي-OCR`: the Arabic official text of the 2019 Charter (Gazette No. 1895) by chapter, plus the promulgating decree and preamble. Text-source: OCR (tesseract, ara). Chapter headings 1 to 16 are checked in sequence; article numbers and digits are not verified, so articles are not split out.
+- `دساتير/2020-الوثيقة-الدستورية-للفترة-الانتقالية-تعديل-النص-الرسمي-OCR`: the Arabic official text of the 2020 amendment (Gazette No. 1908); the item-to-article map is cross-checked against the English copy.
+- The 2025 amendment is held: its OCR digits cannot be cross-checked and there is no second copy.
